@@ -68,3 +68,20 @@ down.addEventListener('click', function(){
   //   down.classList.add('hide');
   // }
 })
+
+let counter = 0;
+// ogni 3 secondi incremento il contatore
+const contatoreAutomatico = setInterval(()=>{
+  itemsCollection[counterImg].classList.remove('active')
+  miniatureCollection[counterImg].classList.remove('active')
+
+  counterImg++;
+  
+  if(counterImg === images.length){
+    counterImg = 0;
+  }
+
+  itemsCollection[counterImg].classList.add('active')
+  miniatureCollection[counterImg].classList.add('active')
+
+},3000)
